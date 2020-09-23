@@ -1,0 +1,38 @@
+//자바
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int up = scanner.nextInt();
+        int down = scanner.nextInt();
+        int leng = scanner.nextInt();
+        int n = 0;  
+        int cnt = 0;    
+        while(true){
+            n += up;
+            cnt += 1;
+            if (n >= leng){
+                break;
+            }
+            else {
+                n -= down;
+            }
+        }    
+    System.out.print(cnt);
+    }
+    
+}
+//파이썬
+up = int(input())
+down = int(input())
+leng = int(input())
+n = 0
+cnt = 0
+while(True):
+    n += up
+    cnt += 1
+    if n >= leng:
+        break
+    n -= down    
+        
+print(cnt)
