@@ -1,0 +1,20 @@
+hor , ver, n = map(int,input().split())
+width = []
+best = []
+for i in range(hor+1):
+    width.append([])
+    for j in range(ver+1):
+        width[i].append([j,0])
+        
+for k in range(n):
+    x = list(map(int,input().split()))
+    for l in range(x[3],x[3] + x[0] +1):
+        for a in range(x[4], x[1] + x[4] +1):
+            width[l][a][1] += x[2]
+print(width)
+for i in range(hor+1):
+    for j in range(ver+1):
+        best.append(width[i][j][1])
+print(max(best))
+
+#시간 초과 및 상자 모서리의 코딩 부분이 불안전하여 실패하였다.
