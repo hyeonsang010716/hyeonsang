@@ -1,0 +1,15 @@
+n = input().split()
+N = 0
+N1 = 0
+cnt = 0
+cnt1 = 0
+x = []
+for i in n[0]:
+    cnt += int(i)*(10**N)
+    N += 1
+for j in n[1]:
+    cnt1 += int(j)*(10**N1)
+    N1 += 1
+x.append(cnt)
+x.append(cnt1)
+print(max(x))
