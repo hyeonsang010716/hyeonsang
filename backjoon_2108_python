@@ -1,0 +1,33 @@
+from collections import Counter
+n = int(input())
+List = []
+if n > 1:
+    for i in range(n):
+        x = int(input())
+        List.append(x)
+    aver = sum(List) % 10
+    if aver >= 5:
+        print(sum(List)//n +1)
+    else:
+        print(sum(List)//n)
+    List.sort()
+    print(List[n//2])
+
+    cnt = Counter(List)
+    cnt_List = cnt.most_common()
+    if cnt_List[0][1] > cnt_List[1][1]:
+        print(cnt_List[0][0])
+    elif cnt_List[0][1] == cnt_List[1][1]:
+        print(cnt_List[1][0])
+    if List[0] * List[n-1] < 0:
+        print(abs(List[0])+ abs(List[n-1]))
+    elif List[0] + List[n-1] > 0:
+        print(List[n-1] - List[0])
+    elif List[0] + List[n-1] < 0:
+        print(abs(List[0])-abs(List[n-1]))
+else:
+    k = int(input())
+    print(k)
+    print(k)
+    print(k)
+    print(0)
