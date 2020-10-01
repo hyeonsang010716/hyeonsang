@@ -1,0 +1,30 @@
+class Solution {
+    public int solution(int input) {
+        int n1;
+        int n2;
+        int i =10;
+        int cnt =0;
+        while(true){
+            if (i > input){
+                break;
+            }
+            else{
+                i *= 10;
+            }
+        }
+        if(input >= 10){
+            n1 = i - input;
+            n2 = input - i/10;
+        }
+        else{
+            n1 = input-1;
+            n2 = 10 - input;
+        }
+        if (n1 > n2){
+            return n1;
+        }
+        else{
+            return n2;
+        }
+    }
+}
