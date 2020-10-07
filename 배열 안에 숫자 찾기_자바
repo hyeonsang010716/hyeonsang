@@ -1,0 +1,25 @@
+class Solution {
+    public int solution(int n, int[] arr) {
+        int cnt[] = new int[n];
+        int x = 0;
+        for(int j = 0; j < n; j++){
+            cnt[j] = 0;
+        }
+        for (int i = 0; i <= arr.length - 1; i++){
+            for(int j = 1; j <= n; j++){
+                if (j == arr[i]){
+                    cnt[j-1] += 1;
+                }
+            }
+            
+            
+        }
+        for(int k = 1; k <= n; k++){
+            if(cnt[k-1] == 1){
+                x = k;
+                break;
+            }
+        }
+        return x;
+    }
+}
