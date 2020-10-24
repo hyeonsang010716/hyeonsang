@@ -1,0 +1,14 @@
+public String[] solution(String str, String s) {
+        String[] answer =  str.split(s);;
+        return answer;
+}
+public int solution(String str) {
+        String s[] = str.split(" ");
+        int answer = s.length;
+        return answer;
+}
+public String solution(String str, String target, String replace) {
+        
+        String answer = str.replace(target,replace);
+        return answer;
+}
