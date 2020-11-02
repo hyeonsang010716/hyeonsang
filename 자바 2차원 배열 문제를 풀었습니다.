@@ -1,0 +1,41 @@
+class Solution {
+    public int[][] solution(int[] array) {
+        int[][] answer;
+        answer = new int[3][];
+        int cnt4 = 0;
+        int cnt5 = 0;
+        int cnt6 = 0;
+        int cnt1 = 0;
+        int cnt2 = 0;
+        int cnt3 = 0;
+        for (int i : array){
+            if (i % 2 == 0){ 
+                cnt1 += 1;
+            }
+            else if(i % 3 == 0) {
+                cnt2 += 1;
+            }
+            else {
+                cnt3 += 1;
+            }    
+        }
+        answer[0] = new int[cnt1];
+        answer[1] = new int[cnt2];
+        answer[2] = new int[cnt3];
+        for(int i : array){
+            if (i % 2 == 0){
+                answer[0][cnt4] = i;
+                cnt4 += 1;
+            }
+            else if(i % 3 == 0){
+                answer[1][cnt5] = i;
+                cnt5 += 1;
+            }
+            else{
+                answer[2][cnt6] = i;
+                cnt6 += 1;
+            }
+        }
+        return answer;
+    }
+}
