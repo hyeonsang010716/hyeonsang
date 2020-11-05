@@ -1,0 +1,29 @@
+class Solution {
+    public String solution(String[] words) {
+        int n = words.length;
+        int cnt1 = 0;
+        int cnt2 = 0;
+        String answer = "xxx";
+        for (int i = 0; i < n; i++){
+            if (words[i].length() < 3){
+                cnt1 = i;
+                break;
+            }
+            if(words[i].charAt(2) != words[i+1].charAt(0)){
+                cnt1 = i+1;
+                break;
+            }
+            if(words[i+1] == words[n-1]){
+                cnt1 = -1;
+                answer = "xxx";
+                break;
+            }
+        }
+        if(cnt1 == -1){
+            return answer;
+        }
+        else{
+            return words[cnt1];
+        }
+    }
+}
