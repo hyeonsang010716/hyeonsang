@@ -1,0 +1,33 @@
+class Solution {
+    public double[] solution(int[] elec) {
+        int n = elec.length;
+        double[] answer = new double[n];
+        for (int i = 0; i < n; i++){
+            if (elec[i] <= 200){
+                answer[i] = 910 + elec[i] * 93.3;
+                continue;
+            }
+            else{
+                answer[i] = 200* 93.3;
+            }
+            
+            if((elec[i] > 200)&&(elec[i] <= 400)){
+                answer[i] += 1600 + 187.9 * (elec[i] - 200);
+                continue;
+            }
+            else{
+                answer[i] += 187.9 * 200;
+            }
+            if((elec[i] > 400)&&(elec[i] <= 1000)){
+                answer[i] += 7300 + 280.6 * (elec[i] - 400);
+                continue;
+            }
+            else{
+                answer[i] += 280.6 * 600;
+            }
+            answer[i] += 7300 + 709.5 * (elec[i] - 1000);
+            
+        }
+        return answer;
+    }
+}
