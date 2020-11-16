@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <style>
+        .container {
+            width: 768px; margin:0 auto; border:1px solid #ddd; padding:30px;
+            background-color: lightpink;
+
+        }
+        input{width:100%}
+        textarea, button {width:100%;}
+        textarea { height:200px; font-size:20px;}
+        button {}
+        img{
+            float:left;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="./김다미.jpg" alt="flower" width="470", height="368">
+    <img src="./김다미2.jpg" alt="flower" width="470", height="368">
+    <img src="./김다미3.jpg" alt="flower" width="470", height="368">
+    <img src="./김다미4.jpg" alt="flower" width="470", height="368">
+
+    <div class="container">
+        <input id="nameInput" placeholder="이름을 입력해주세요."></input>
+        <textarea id="postInput" placeholder="글 주제를 입력해주세요."></textarea>
+        <button onclick="postClick()">글 쓰기</button>
+    </div>
+
+    <div id="timeline">
+        <div class="container">
+            <h1>작성자</h1>
+            <p>내용</p>
+       </div>
+    </div>
+
+    <script>
+        let nameInput = document.querySelector('#nameInput');
+        let postInput = document.querySelector('#postInput');
+        let timeline = document.querySelector('#timeline');
+        window.onload = async () => {
+            const postResponse = await fetch('http://ec2-52-78-131-251.ap-northeast-2.compute.amazonaws.com/feed/',{
+                method: 'get',
+
+            })
+            const posts = await postResponse.json();
+
+            for(let i = 0; i < posts.length; i++){
+                console.log(posts[i]);
+                post("owner: "+ posts[i].owner, "content: "+ posts[i].content);
+            }
+
+        };
+
+        const postClick = async () => {
+            post(nameInput.value,postInput.value);
+            await fetch(
+                "http://ec2-52-78-131-251.ap-northeast-2.compute.amazonaws.com/feed/",
+                {
+                    method: "post",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        content: postInput.value,
+                        owner: nameInput.value,
+                    }),
+                }
+            );
+        };
+
+        const post = (name, description) => {
+
+            let container = document.createElement('div');
+            let owner = document.createElement('h1');
+            let content = document.createElement('p');
+            owner.appendChild(document.createTextNode(name));
+            content.appendChild(document.createTextNode(description));
+
+
+            container.setAttribute('class', 'container');
+            container.appendChild(owner);
+            container.appendChild(content);
+
+            timeline.appendChild(container);
+        };
+
+    </script>
+</body>
+</html>
