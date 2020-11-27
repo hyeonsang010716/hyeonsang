@@ -1,0 +1,31 @@
+class Guess:
+
+    def __init__(self, word):
+        self.secretWord = word
+        self.currentStatus = '_' * len(word)
+        self.guessedChars = []
+        self.numTries = 0
+
+
+    def display(self):
+        print("current:{}".format(self.currentStatus))
+        print("Tries: {}".format(self.numTries))
+
+
+    def guess(self, character):
+        self.guessedChars.append(character)
+        if character not in self.secretWord:
+            self.numTries += 1
+            return False
+        else:
+            currentStatus = ''
+            for c in self.secretWord:
+                if c in self.guessedChars:
+                    currentStatus += c
+                else:
+                    currentStatus += '_'
+
+            self.currentStatus = currentStatus
+            if self.secretWord == self.currentStatus:
+                return True
+
