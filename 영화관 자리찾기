@@ -1,0 +1,36 @@
+class Solution {
+    public int solution(int[][] seat) {
+        int cnt = 0;
+        int answer = 0;
+        for (int i = 0; i < seat.length; i++){
+            for(int j = 0; j < seat[0].length; j++){
+                if (i -1 >= 0){
+                    if (seat[i-1][j] == 1){
+                        cnt += 1;
+                    }
+                }
+                if (i + 1 < seat.length){
+                    if (seat[i+1][j] == 1){
+                        cnt += 1;
+                    }
+                }
+                if (j +1 < seat[0].length){
+                    if (seat[i][j +1] == 1){
+                        cnt += 1;
+                    }
+                }
+                if (j - 1 >= 0){
+                    if (seat[i][j-1] == 1){
+                        cnt += 1;
+                    }
+                }
+                if(cnt == 0){
+                    answer += 1;
+                }
+                cnt = 0;
+                
+            }
+        }
+        return answer;
+    }
+}
