@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>기초 스터디 과제</title>
+</head>
+<style>
+    body{
+        background-image: url("movie.jpg");
+        background-repeat: no-repeat;
+    }
+    .header_box {
+        background: radial-gradient(white, gray, black);
+        text-align: center;
+        color: black;
+        font-family: "맑은 고딕";
+        font-size: 25px;
+    }
+    .img1{
+        float: left;
+        width: 100px;
+        height: 66px;
+        margin-right: 50px;
+
+    }
+    .img2{
+        float: right;
+        width: 100px;
+        height: 66px;
+        margin-left: 50px;
+
+    }
+
+
+
+    nav{
+        width:100%;
+        background: linear-gradient(red, mediumvioletred,mediumorchid,plum,pink);
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    ul, li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+
+    a{
+        text-decoration: none;
+        color: darkblue;
+    }
+
+    a:hover{
+        color: red;
+    }
+
+
+    nav > ul > li {
+        display: inline-block;
+        color: white;
+    }
+    .dropdown{}
+    .dropdown-menu{
+        width: 120px;
+        height: 50px;
+        background: black;
+        color: white;
+        font-family: "맑은 고딕";
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+        float: left;
+        margin: 0;
+
+    }
+    .dropdown-content {
+        width: 90px;
+        display: none;
+        position: absolute;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        background-color: white;
+        padding: 0 15px;
+     }
+     .dropdown-content a{
+         display: block;
+     }
+     .dropdown:hover .dropdown-content{
+         display:block;
+     }
+
+
+
+
+
+    .div_box{
+        width: 1540px;
+        height: 476px;
+        margin-left: 150px;
+
+    }
+     .div_img{
+         width: 755px;
+         height: 476px;
+         float: left;
+
+     }
+
+
+
+     .div_margin{
+         margin-top: 100px;
+
+     }
+     .movie_header{
+         text-align: center;
+         color: white;
+         font-family: "맑은 고딕";
+         font-size: 30px;
+
+
+     }
+
+
+
+     .input{
+         margin-top: 25px;
+         float: left;
+         width: 300px;
+         height: 440px;
+         border-color: white;
+         border-width: 5px;
+         border-style: solid;
+         background-color: white;
+     }
+
+
+
+
+
+</style>
+<body>
+    <header class ="header_box">
+        <h1> <img class="img1" src="cgv.png">영화 추천<img class="img2" src="netf.png"></h1>
+    </header>
+    <nav>
+        <ul>
+            <li class = "dropdown">
+                <div class = "dropdown-menu">액션</div>
+                <div class = "dropdown-content">
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=175322">마녀</a>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=136900">어벤져스</a>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=71509">아저씨</a>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=161242">범죄도시</a>
+                </div>
+            </li>
+            <li class = "dropdown">
+                <div class = "dropdown-menu">스릴러</div>
+                <div class = "dropdown-content">
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=53825">레지던트이블</a>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=156083">겟아웃</a>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=92823">컨져링</a>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=181414">어스</a>
+                </div>
+            </li>
+            <li class = "dropdown">
+                <div class = "dropdown-menu">코믹</div>
+                <div class = "dropdown-content">
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=153652">청년경찰</a>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=124201">탐정:더비기닝</a>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=107924">수상한그녀</a>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=167651">극한직업</a>
+                </div>
+            </li>
+            <li class = "dropdown">
+                <div class = "dropdown-menu">로맨스</div>
+                <div class = "dropdown-content">
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=140652">너의결혼식</a>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=142691">나의소녀시대</a>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=92075">어바웃타임</a>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=137915">미비포유</a>
+                </div>
+            </li>
+            <li class = "dropdown">
+                <div class = "dropdown-menu">SF판타지</div>
+                <div class = "dropdown-content">
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=167605">터미네이터</a>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=13500">쥬라기공원</a>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=30688">해리포터</a>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=31794">반지의제왕</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="div_box" >
+        <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=164143"><h1><img class="div_img" src="new%20movie.png"></h1></a>
+        <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=67900"><h1><img class="div_img" src="new%20movie2.png"></h1></a>
+    </div>
+    <div class = "div_margin">
+        <h1 class="movie_header">[현재상영중]</h1>
+        <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=199393"> <h1 class="div_img"> <img src="moving.png"> </h1> </a>
+        <h1 class="div_img"> <img src="moviejo.png"> </h1>
+
+        <div class="input">
+            <h1> 로그인 </h1>
+            <form name="login_form" method="post" action="login_ok.php" onSubmit="return check_form()">
+                아이디 <input type="text" name="id"><br>
+                비밀번호 <input type="password" name="password">
+                <input type="submit" value="로그인">
+            </form>
+        </div>
+
+
+
+    </div>
+
+    <!--<footer><h1 style="margin-top: 95px"><img src="wink.png"></h1></footer> -->
+
+    <script>
+        function check_form() {
+            var f = document.login_form;
+            if (f.id.value == "hyeonsang" && f.password.value == "20203146") {
+                alert("로그인 되었습니다.")
+            } else if (f.id.value != "hyeonsang" && f.password.value == "20203146") {
+                alert("아이디가 틀립니다.")
+            } else if (f.id.value == "hyeonsang" && f.password.value != "20203146") {
+                alert("비밀번호가 틀립니다.")
+            } else {
+                alert("아이디 비밀번호 둘다 틀립니다.")
+            }
+        }
+    </script>
+</body>
+</html>
